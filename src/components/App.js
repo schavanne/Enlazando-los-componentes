@@ -29,31 +29,30 @@ function App() {
       <div id="wrapper">
         <SideBar />
         <Switch>
-        <Route path="/">
-            <ContentWrapper />
-          </Route>
-          <Route path="/home">
-            <ContentWrapper />
-          </Route>
-          <div className='row'>
-            <div className="col-lg-12 mb-4">
-              <Route  path="/generoEnDb">
-                <GenresInDb/>
+            <Route exact path="/">
+                <ContentWrapper />
               </Route>
-              <Route  path="/ultimaPelicula">
-                <LastMovieInDb />
+              <Route exact path="/home">
+                <ContentWrapper />
               </Route>
-              <Route  path="/contenidoPelicula">
-                <div className='pl-2'>
-                  <ContentRowMovies />
+              <div className='row'>
+                <div className="col-lg-12 mb-4">
+                  <Route exact path="/generoEnDb">
+                    <GenresInDb/>
+                  </Route>
+                  <Route exact path="/ultimaPelicula">
+                    <LastMovieInDb />
+                  </Route>
+                  <Route exact path="/contenidoPelicula">
+                    <div className='pl-2'>
+                      <ContentRowMovies />
+                    </div>
+                  </Route>
+                  <Route exact path="/error404">
+                    <ErrorPagina />
+                  </Route>
                 </div>
-              </Route>
-              <Route path="*">
-                  <ErrorPagina />
-              </Route>
-            </div>
-          </div>
-          
+              </div>
         </Switch>
       </div>
   </Router>
